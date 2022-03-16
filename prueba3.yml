@@ -1,0 +1,17 @@
+---
+- name: New user is created
+  hosts: localhost
+  become: true
+  vars:
+    username: Test-B
+      #test:
+      #  uname: Test-A
+      #  description: User Test-A
+  
+  tasks:
+    - name: User gets created
+      user:
+        name: "{{ username }}"
+       # name: "{{ username['test']['uname'] }}"
+       # comment: "{{ username['test']['description'] }}"
+        state: absent
